@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module 1 Exercise 3</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        min-height: 100vh;
+        align-items: stretch;
+      }
+
+      .column {
+        background: goldenrod;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+
+      button {
+        margin: 20px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+      button:hover {
+        background-color: ivory;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="column" id="column1">
+        <h1 id="heading1">Hello</h1>
+        <button type="button" onclick="buttonOne()">Click Me!</button>
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/028/699/405/non_2x/waving-hand-icon-emoji-sticker-vector.jpg"
+          alt="waving hand"
+          width="400px"
+        />
+      </div>
+      <div class="column" id="column2">
+        <h1 id="heading2">World</h1>
+        <button type="button" onclick="buttonTwo()">Click Me!</button>
+        <img
+          src="https://ichef.bbci.co.uk/images/ic/480xn/p070bqpj.jpg"
+          alt="world"
+          width="400px"
+        />
+      </div>
+    </div>
+    <script>
+      function buttonOne() {
+        const columnOne = document.getElementById("column1");
+        const Hello = document.getElementById("heading1");
+        columnOne.style.backgroundColor = "yellow";
+        Hello.innerText = "I have been changed!";
+
+        console.log("button one is working");
+      }
+      function buttonTwo() {
+        const columnTwo = document.getElementById("column2");
+        const World = document.getElementById("heading2");
+        columnTwo.style.backgroundColor = "cyan";
+        World.innerText = "I have been changed!";
+
+        console.log("button two is working");
+      }
+    </script>
+  </body>
+</html>

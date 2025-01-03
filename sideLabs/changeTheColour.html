@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change the Colour</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        border: 2px solid black;
+        width: 100px;
+        height: 50px;
+      }
+      button:hover {
+        background-color: beige;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const colours = ["red", "blue", "purple", "yellow"];
+        let currentIndex = 0;
+        function changeColour() {
+          document.getElementById("hello").style.backgroundColor =
+            colours[currentIndex];
+          currentIndex++;
+          if ([currentIndex] >= colours.length) {
+            currentIndex = 0;
+          }
+        }
+        document
+          .getElementById("submit")
+          .addEventListener("click", changeColour);
+      });
+    </script>
+  </head>
+  <body id="hello">
+    <div>
+      <button id="submit" type="button">Click me to change the Colour</button>
+    </div>
+  </body>
+</html>

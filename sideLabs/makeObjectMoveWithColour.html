@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Make Object Move with Colour</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body,
+      html {
+        height: 50%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        border: 2px solid black;
+        width: 150px;
+        text-align: center;
+        background-color: beige;
+        position: relative;
+      }
+      p {
+        padding: 10px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      let positionX = 0;
+      let positionY = 0;
+
+      const colours = ["red", "purple", "blue", "orange"];
+      let colourIndex = 0;
+
+      function moveDiv(event) {
+        if (event.code === "KeyW") {
+          positionY -= 50;
+          let divObj = document.getElementById("hello");
+          divObj.style.top = positionY + "px";
+        }
+        if (event.code === "KeyS") {
+          positionY += 50;
+          let divObj = document.getElementById("hello");
+          divObj.style.top = positionY + "px";
+        }
+        if (event.code === "KeyA") {
+          positionX -= 50;
+          let divObj = document.getElementById("hello");
+          divObj.style.left = positionX + "px";
+        }
+        if (event.code === "KeyD") {
+          positionX += 50;
+          let divObj = document.getElementById("hello");
+          divObj.style.left = positionX + "px";
+        }
+        document.body.style.backgroundColor = colours[colourIndex];
+        colourIndex = (colourIndex + 1) % colours.length;
+      }
+
+      document.addEventListener("keydown", moveDiv);
+    </script>
+  </head>
+  <body>
+    <div id="hello">
+      <p>Everytime i move the page will change colour!</p>
+    </div>
+  </body>
+</html>

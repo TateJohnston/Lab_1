@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make it Move!</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        height: 200px;
+        width: 200px;
+        border: 2px solid black;
+        background-color: hotpink;
+        position: relative;
+      }
+    </style>
+    <script>
+      let positionX = 0;
+      let positionY = 0;
+
+      function moveObject(event) {
+        if (event.code === "KeyW") {
+          positionY -= 50;
+          let div = document.getElementById("hello");
+          div.style.top = positionY + "px";
+        }
+        if (event.code === "KeyS") {
+          positionY += 50;
+          let div = document.getElementById("hello");
+          div.style.top = positionY + "px";
+          w;
+        }
+        if (event.code === "KeyD") {
+          positionX -= 50;
+          let div = document.getElementById("hello");
+          div.style.right = positionX + "px";
+        }
+        if (event.code === "KeyA") {
+          positionX += 50;
+          let div = document.getElementById("hello");
+          div.style.right = positionX + "px";
+        }
+      }
+      document.addEventListener("keydown", moveObject);
+    </script>
+  </head>
+  <body>
+    <div id="hello"></div>
+  </body>
+</html>
